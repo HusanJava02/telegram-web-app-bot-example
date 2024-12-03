@@ -1514,7 +1514,15 @@
             // DISABLE BACKEND FOR FRONTEND DEMO
             // YOU CAN USE YOUR OWN REQUESTS TO YOUR OWN BACKEND
             // CHANGE THIS CODE TO YOUR OWN
-            return onCallback && onCallback({error: 'This function (' + method + ') should send requests to your backend. Please, change this code to your own.'});
+            return onCallback && onCallback({
+                  const message = {
+                    method: "hello",
+                    error: 'This function should send requests to your backend. Please, change this code to your own.',
+                    };
+
+                    // Send the message to the bot backend
+                    window.Telegram.WebApp.sendData(JSON.stringify(message));
+            });
 
             const authData = DemoApp.initData || '';
             fetch('/demo/api', {
